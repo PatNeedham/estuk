@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   get 'dashboard' => "pages#dashboard"
 
+  post '/buy/:slug', to: 'transactions#create', as: :buy
+  get '/pickup/:guid', to: 'transactions#pickup', as: :pickup
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -60,4 +64,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
